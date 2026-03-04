@@ -1,0 +1,1 @@
+print("kasiki virekero et wasingya maunga")
