@@ -1,1 +1,1 @@
-print("kasiki virekero et wasingya maunga")
+print("KASIKI VIREKERO et WASINGYA MAUNGA")
