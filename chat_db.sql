@@ -21,13 +21,16 @@ SET time_zone = "+00:00";
 -- Base de données : `chat_db`
 --
 
+CREATE DATABASE IF NOT EXISTS `chat_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `chat_db`;
+
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `chat_messages`
 --
 
-CREATE TABLE `chat_messages` (
+CREATE TABLE IF NOT EXISTS `chat_messages` (
   `id` bigint(20) NOT NULL,
   `sent_at` datetime NOT NULL,
   `sender` varchar(64) NOT NULL,
@@ -35,19 +38,6 @@ CREATE TABLE `chat_messages` (
   `recipients` text NOT NULL,
   `message_text` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `chat_messages`
---
-
-INSERT INTO `chat_messages` (`id`, `sent_at`, `sender`, `mode`, `recipients`, `message_text`) VALUES
-(1, '2026-03-03 14:49:59', 'jj', 'broadcast', '', 'bonjour'),
-(2, '2026-03-03 14:53:25', 'vestro', 'private', 'jj', 'ttttt'),
-(3, '2026-03-03 16:12:45', 'vestro', 'broadcast', '', 'hello world !'),
-(4, '2026-03-03 16:18:49', 'vestro', 'broadcast', '', 'salut'),
-(5, '2026-03-03 16:28:20', 'clarice', 'private', 'kasiki', 'hello kasiki'),
-(6, '2026-03-03 16:28:59', 'kasiki', 'private', 'clarice', 'who are you'),
-(7, '2026-03-04 14:44:56', 'vestro', 'private', 'wasi', 'salut');
 
 --
 -- Index pour les tables déchargées
